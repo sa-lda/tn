@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const stripe = require('stripe')(process.env.STP);
+const axios = require('axios');
 
 exports.handler = async function (event, context) {
     if(event.httpMethod != "POST" && event.httpMethod != "OPTIONS") {
@@ -31,19 +31,23 @@ exports.handler = async function (event, context) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-                
-                resolve({
-                    statusCode: 200,
-                    headers: {
-                        'Access-Control-Allow-Origin': 'https://technept.uno',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        id: 32,
-                        url: 4334
+                axios.get('http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1')
+                .then((res) => {
+                    resolve({
+                        statusCode: 200,
+                        headers: {
+                            'Access-Control-Allow-Origin': 'https://technept.uno',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: res.smtp_check,
+                            url: 4334
+                        })
                     })
                 })
-                
+              .catch((err) => {
+                console.error(err);
+              });                
             });
             break;
         case "re4kvlb13v":
