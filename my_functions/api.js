@@ -39,10 +39,7 @@ exports.handler = async function (event, context) {
                             'Access-Control-Allow-Origin': 'https://technept.uno',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({
-                            id: res.smtp_check,
-                            url: 4334
-                        })
+                        body: JSON.stringify(res)
                     })
                 })
               .catch((err) => {
