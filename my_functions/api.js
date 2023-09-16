@@ -31,8 +31,7 @@ exports.handler = async function (event, context) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-                /*
-                axios.get('http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1')
+                await axios.get('http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1')
                 .then((res) => {
                     resolve({
                         statusCode: 200,
@@ -45,16 +44,7 @@ exports.handler = async function (event, context) {
                 })
               .catch((err) => {
                 console.error(err);
-              });   
-              */
-                                    resolve({
-                        statusCode: 200,
-                        headers: {
-                            'Access-Control-Allow-Origin': 'https://technept.uno',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ds:322})
-                    })
+              });
             });
             break;
         case "re4kvlb13v":
