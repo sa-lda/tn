@@ -3814,7 +3814,7 @@
     if(email != "") {
       var validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (validRegex.test(email)) {
-        fetch('https://technept.uno/.netlify/api/download', {
+        fetch('https://technept.uno/.netlify/functions/api/download', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
