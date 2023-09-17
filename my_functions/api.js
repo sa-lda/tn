@@ -39,7 +39,7 @@ exports.handler = async function (event, context) {
                             'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(res)
+                        body: JSON.stringify({ds: res})
                     })
                 })
                 .catch((err) => {
