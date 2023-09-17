@@ -31,7 +31,7 @@ exports.handler = async function (event, context) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-                await axios.get("http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1")
+                await axios.get(`http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=${params.email}&smtp=1&format=1`)
                 .then((res) => {
                     resolve({
                         statusCode: 200,
