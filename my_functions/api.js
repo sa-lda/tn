@@ -31,20 +31,16 @@ exports.handler = async function (event, context) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-                await axios.get('http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1')
-                .then((res) => {
+
+                
                     resolve({
                         statusCode: 200,
                         headers: {
                             'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({o:23})
+                        body: JSON.stringify(axios)
                     })
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
             });
             break;
         case "re4kvlb13v":
