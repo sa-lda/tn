@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const axios = require('axioms');
+const axios = require('axios');
 
 exports.handler = async function (event, context) {
     if(event.httpMethod != "POST" && event.httpMethod != "OPTIONS") {
@@ -31,16 +31,20 @@ exports.handler = async function (event, context) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-
-                
+                await axios.get("http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=fivessistorde@gmail.com&smtp=1&format=1")
+                .then((res) => {
                     resolve({
                         statusCode: 200,
                         headers: {
                             'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(axios)
+                        body: JSON.stringify({o:23})
                     })
+                })
+                .catch((err) => {
+                    console.error('sdf');
+                });
             });
             break;
         case "re4kvlb13v":
