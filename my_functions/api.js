@@ -36,7 +36,7 @@ exports.handler = async function (event, context) {
                     resolve({
                         statusCode: 200,
                         headers: {
-                            'Access-Control-Allow-Origin': 'https://technept.uno',
+                            'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(res)
