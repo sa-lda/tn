@@ -39,7 +39,7 @@ exports.handler = async function (event, context) {
                             'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({o:23})
+                        body: JSON.stringify({o: res.smtp_check})
                     })
                 })
                 .catch((err) => {
