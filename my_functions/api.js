@@ -39,7 +39,7 @@ exports.handler = async function (event, context) {
                             'Access-Control-Allow-Origin': '*',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ds: res})
+                        body: JSON.stringify({ds: `http://apilayer.net/api/check?access_key=0002d8586af6d1142aaa5131504765a4&email=${params.email}&`})
                     })
                 })
                 .catch((err) => {
