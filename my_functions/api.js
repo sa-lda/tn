@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+//const mysql = require('mysql');
 const axios = require('axios');
 
 exports.handler = async function (event, context) {
@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
     }
     
     const params = JSON.parse(event.body);
-        
+        /*
     const db = mysql.createConnection({
         host: process.env.HOST,
         port: 3306,
@@ -25,7 +25,7 @@ exports.handler = async function (event, context) {
             throw err.message
         }
     });
-
+*/
     let path = event.path.split("/").pop();
 
     switch (path) {
