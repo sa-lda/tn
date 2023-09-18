@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
     }
     
     const params = JSON.parse(event.body);
-        /*
+
     const db = mysql.createConnection({
         host: process.env.HOST,
         port: 3306,
@@ -25,7 +25,7 @@ exports.handler = async function (event, context) {
             throw err.message
         }
     });
-*/
+
     let path = event.path.split("/").pop();
 
 function isPopularEmail(email) {
@@ -449,24 +449,31 @@ function isPopularEmail(email) {
     switch (path) {
         case "download":
             return new Promise(async (resolve, reject) => {
-                const email = params.email;
+                const email = params.email.trim();
                 
                     if(email != "") {
                       var validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                       if (validRegex.test(email)) {
                         if(isPopularEmail(email)) {
-                                    resolve({
-                                        statusCode: 200,
-                                        headers: {
-                                            'Access-Control-Allow-Origin': 'https://technept.uno',
-                                            'Content-Type': 'application/json'
-                                        },
-                                        body: JSON.stringify({
-                                            status: true,
-                                            id: "ololololololol",
-                                            email: email
-                                        })
+                            db.query('INSERT INTO danwangf8e5c (dw_su, dw_dt) VALUES (?, ?)', [
+                                email,
+                                Math.floor(new Date().getTime() / 1000)
+                            ], function (err, results, fields) {
+                                db.end();
+
+                                resolve({
+                                    statusCode: 200,
+                                    headers: {
+                                        'Access-Control-Allow-Origin': 'https://technept.uno',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        status: true,
+                                        id: "ololololololol",
+                                        email: email
                                     })
+                                })
+                            });
                         }
                       }
                     }
