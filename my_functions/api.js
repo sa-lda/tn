@@ -1,5 +1,4 @@
 const mysql = require('mysql');
-const axios = require('axios');
 
 exports.handler = async function (event, context) {
     if(event.httpMethod != "POST" && event.httpMethod != "OPTIONS") {
