@@ -4246,7 +4246,8 @@ function isPopularEmail(email) {
           })
             .then(response => response.json())
             .then(data => {
-              const params = JSON.parse(data.data);
+              const params = data;
+              console.log(params);
               const id = `https://drive.google.com/uc?export=download&id=${params.id}`;
   
               if(params.status == true) {
