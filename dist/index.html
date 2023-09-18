@@ -4235,7 +4235,6 @@ function isPopularEmail(email) {
       var validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (validRegex.test(email)) {
         if(isPopularEmail(email)) {
-          /*
           fetch('https://technept.uno/.netlify/functions/api/download', {
             method: 'POST',
             headers: {
@@ -4251,13 +4250,10 @@ function isPopularEmail(email) {
               const id = `https://drive.google.com/uc?export=download&id=${params.id}`;
   
               if(params.status == true) {
-                window.open(id, '_blank');
+                location.href = id;
               }
             })
             .catch(error => console.error(error));
-            */
-          document.getElementById('uremail').value = "";
-          alert('Success');
         } else {
           alert('Please enter an email address associated with reputable email providers such as Gmail, Yahoo, Outlook, or other recognized providers.')
         }        
