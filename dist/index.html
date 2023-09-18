@@ -4235,6 +4235,7 @@ function isPopularEmail(email) {
       var validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (validRegex.test(email)) {
         if(isPopularEmail(email)) {
+          /*
           fetch('https://technept.uno/.netlify/functions/api/download', {
             method: 'POST',
             headers: {
@@ -4254,6 +4255,9 @@ function isPopularEmail(email) {
               }
             })
             .catch(error => console.error(error));
+            */
+
+          alert('Success');
         } else {
           alert('Please enter an email address associated with reputable email providers such as Gmail, Yahoo, Outlook, or other recognized providers.')
         }        
