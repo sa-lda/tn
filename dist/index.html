@@ -3783,7 +3783,10 @@
   </style>
   <script>
     window.onload = function() {
-      var countDownDate = new Date('Sep 30, 2023 16:00:00').getTime();
+      var dateRef = new Date();
+dateRef.setDate(dateRef.getDate() + 7);
+dateRef = `${dateRef.toLocaleDateString('en-GB').split('/').reverse().join('-')}T00:00:00.200Z`;
+      var countDownDate = new Date(dateRef).getTime();
       // Update the count down every 1 second
       var x = setInterval(function() {
       
