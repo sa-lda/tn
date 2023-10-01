@@ -10,7 +10,7 @@
   force = true
 
 [[redirects]]
-  from = "/.netlify/functions/*"
+  from = "/api/*"
   to = "/:splat"
   status = 200
   force = true
