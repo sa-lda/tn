@@ -8,7 +8,6 @@ exports.handler = async function (event, context) {
     }
     
     const params = JSON.parse(event.body);
-
     const db = mysql.createConnection({
         host: process.env.HOST,
         port: 3306,
