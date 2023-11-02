@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event, context) => {
 
-  const eventBody = JSON.parse(event.body);
+  //const eventBody = JSON.parse(event.body);
 
 
 
@@ -35,12 +35,12 @@ exports.handler = async (event, context) => {
 
   try {
 
-    const res = await fetch("https://movies2watch.tv/");
+    //const res = await fetch("https://movies2watch.tv/");
 
-    const data = await res.json();
+    //const data = await res.json();
 
-    return { statusCode: 200, body: JSON.stringify({ data }) };
-
+    //return { statusCode: 200, body: JSON.stringify({ data }) };
+return { statusCode: 200, body: "{\"sdf\": 2}" };
   } catch (error) {
 
     console.log(error);
