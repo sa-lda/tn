@@ -1,11 +1,5 @@
-const fetch = require('node-fetch');
-
 exports.handler = async function (event, context) {
 
-  const response = await fetch('https://movies2watch.tv');
-  const data = await response.json();
-
-  
             return new Promise(async (resolve, reject) => {            
 
                 
@@ -16,7 +10,7 @@ exports.handler = async function (event, context) {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                      message: data
+                      message: 232
                     })
                 })
             
