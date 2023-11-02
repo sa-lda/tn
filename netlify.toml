@@ -1,10 +1,17 @@
 [build]
   base = "/"
   publish = "dist/"
-  command  = "npx browserslist@latest --update-db && npm install mysql && npm install node-fetch && npm install validator && npm install stripe && npm run build"
+  command  = "npx browserslist@latest --update-db && npm install mysql && npm install node-fetch && npm install stripe && npm run build"
   functions = "my_functions/"
 
 [[redirects]]
-  from = "/api/*"
+  from = "/rest/*"
   to = "/.netlify/functions/:splat"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
