@@ -1,9 +1,6 @@
 //const mysql = require('mysql');
 
 exports.handler = async function (event, context) {   
-    const params = JSON.parse(event.body);
-
-
             return {
                 statusCode: 200,
                 headers: {
