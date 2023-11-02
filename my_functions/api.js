@@ -15,10 +15,7 @@ exports.handler = async function (event, context) {
                 body: JSON.stringify({
                     message: data
                 })
-            }
-  })
-  .catch(error => console.error(error));
-            
+          
 
     
 }
