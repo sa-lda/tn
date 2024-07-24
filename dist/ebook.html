@@ -13,6 +13,16 @@
   <meta name="description" content="">
   <link rel="stylesheet" href="https://res.cloudinary.com/dn7oszy7j/raw/upload/v1721778163/style_ufbud6.css">
   <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  <script>
+    window.onload = function() {
+      const t = new URLSearchParams(window.location.search).get('t');
+      if(t) {
+        alert(t)
+      } else {
+        alert('dgfd')
+      }
+    }
+  </script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none !important">
